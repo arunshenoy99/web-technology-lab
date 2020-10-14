@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dynamic text</title>
+        <style>
+            p 
+            {
+                position: absolute;
+                top: 48%;
+                right: 48%;
+            }
+            h1 
+            {
+                position: absolute;
+                top: 10%;
+                left: 0%;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <h1 id="font"></h1>
+        <script>
+            var p = document.getElementById('demo');
+            var h1 = document.getElementById('font')
+            var fontSize = 0;
+            var grow = setInterval(grower, 1000);
+            var shrink;
+            function grower()
+            {
+                p.innerHTML = 'TEXT GROWING';
+                p.setAttribute('style', 'font-size: ' + fontSize + 'px; color: red;');
+                h1.innerHTML = 'font-size: ' + fontSize;
+                fontSize += 5;
+                if (fontSize >= 50)
+                {
+                    clearInterval(grow);
+                    shrink = setInterval(shrinker, 1000);
+                }
+            }
+
+            function shrinker()
+            {
+                p.innerHTML = 'TEXT SHRINKING';
+                p.setAttribute('style', 'font-size:' + fontSize + 'px; color: blue;');
+                h1.innerHTML = 'font-size: ' + fontSize;
+                fontSize -= 5;
+                if (fontSize === 0)
+                {
+                    clearInterval(shrink);
+                }
+            }
+        </script>
+    </body>
+</html>
