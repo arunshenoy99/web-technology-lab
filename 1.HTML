@@ -6,10 +6,12 @@
                 border: 1px solid black;
                 width: 33%;
                 text-align: center;
-                background-color: DarkGrey;
             }
             table {
-                margin: auto;
+                background-color: aqua;
+                margin: 400px auto;
+                height: 300px;
+                width: 300px;
             }
             input {
                 text-align: right;
@@ -32,6 +34,10 @@
                     document.getElementById('answer').value = val1 * val2
                 }
                 else if (clicked_id == 'div') {
+                    if(val2 == 0) {
+                        document.getElementById('answer').value = 'Divide By Zero Error'
+                        return
+                    }
                     document.getElementById('answer').value = val1 / val2
                 }
             }
