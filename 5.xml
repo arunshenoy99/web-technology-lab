@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/css" href="5.css" ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>STUDENT DESCRIPTION</h1>
+    </head>
+    <students>
+        <student>
+            <USN>USN: 1BY17CS032</USN>
+            <NAME>NAME: ARUN</NAME>
+            <COLLEGE>COLLEGE: BMSIT</COLLEGE>
+            <BRANCH>BRANCH: CSE</BRANCH>
+            <YEAR>YEAR: 2019</YEAR>
+            <E-MAIL>EMAIL: arunshenoy99@gmail.com</E-MAIL> 
+        </student>
+        <student>
+            <USN>USN: 1BY17IS034</USN>
+            <NAME>NAME: DANISH</NAME>
+            <COLLEGE>COLLEGE: BMSIT</COLLEGE>
+            <BRANCH>BRANCH: ISE</BRANCH>
+            <YEAR>YEAR: 2019</YEAR>
+            <E-MAIL>EMAIL: danish@gmail.com</E-MAIL> 
+        </student>
+        <student>
+            <USN>USN: 1BY17EC051</USN>
+            <NAME>NAME: PALLAVI</NAME>
+            <COLLEGE>COLLEGE: BMSIT</COLLEGE>
+            <BRANCH>BRANCH: ECE</BRANCH>
+            <YEAR>YEAR: 2019</YEAR>
+            <E-MAIL>EMAIL: pallavi@gmail.com</E-MAIL> 
+        </student>
+    </students>    
+</html>
