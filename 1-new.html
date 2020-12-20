@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                height: 100vh;
+            }
+            .calculator-body {
+                position: absolute;
+                margin-top: auto;
+            }
+            table {
+                margin: auto;
+                height: 500px;
+                width: 500px;
+            }
+            tr {
+                width: 100%;
+                height: 150px;
+            }
+            td input {
+                width: 100%;
+                height: 150px;
+                font-size: 3em;
+            }
+        </style>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <header>
+            <h1>A simple calculator</h1>
+        </header>
+        <div class="calculator-body">
+            <table>
+                <caption>My Calculator</caption>
+                <tr>
+                    <td colspan="4"><input type="text" id="expression"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="1" onclick="calcInput('1')">
+                    </td>
+                    <td>
+                        <input type="button" value="2" onclick="calcInput('2')">
+                    </td>
+                    <td>
+                        <input type="button" value="3" onclick="calcInput('3')">
+                    </td>
+                    <td>
+                        <input type="button" value="+" onclick="calcInput('+')">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="4" onclick="calcInput('4')">
+                    </td>
+                    <td>
+                        <input type="button" value="5" onclick="calcInput('5')">
+                    </td>
+                    <td>
+                        <input type="button" value="6" onclick="calcInput('6')">
+                    </td>
+                    <td>
+                        <input type="button" value="-" onclick="calcInput('-')">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="7" onclick="calcInput('7')">
+                    </td>
+                    <td>
+                        <input type="button" value="8" onclick="calcInput('8')">
+                    </td>
+                    <td>
+                        <input type="button" value="9" onclick="calcInput('9')">
+                    </td>
+                    <td>
+                        <input type="button" value="*" onclick="calcInput('*')">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="0" onclick="calcInput('0')">
+                    </td>
+                    <td>
+                        <input type="button" value="." onclick="calcInput('.')">
+                    </td>
+                    <td>
+                        <input type="button" value="/" onclick="calcInput('/')">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="clear" onclick="cls();">
+                    </td>
+                    <td>
+                        <input type="button" value="=" onclick="calcEvaluate();">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript">
+            function cls() {
+                document.getElementById('expression').value = "";
+            }
+            
+            function calcInput(value) {
+                document.getElementById('expression').value += value;
+            }
+
+            function calcEvaluate() {
+                expression = document.getElementById('expression').value;
+                result = eval(expression);
+                document.getElementById('expression').value = result; 
+            }
+        </script>
+    </body>
+</html>
