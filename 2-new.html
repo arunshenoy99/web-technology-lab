@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            table, th, td {
+                width: 33%;
+                text-align: center;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            table {
+                margin-top: 30px;
+            }
+            tr:nth-child(even) {
+                background-color: grey;
+            }
+        </style>
+        <title>Squares and Cubes</title>
+    </head>
+    <body>
+        <input type="text" id="number" onblur="cal();" placeholder="LowerRange-HigherRange">
+        <div id="result"></div>
+        <script type="text/javascript">
+            function cal() {
+                var value = document.getElementById('number').value.trim();
+                if (value.length == 0) {
+                    return;
+                }
+                var range = value.split('-');
+                if (range.length == 1) {
+                    var lowerRange = parseInt(range[0]);
+                    var higherRange = lowerRange + 10;
+                } else {
+                    var lowerRange = parseInt(range[0]);
+                    var higherRange = parseInt(range[1]);
+                }
+                if (lowerRange > higherRange) {
+                    return;
+                }
+                var html = '<table><tr><th colspan="3">Squares and cubes of numbers</th></tr>';
+                html += ('<tr><td>Number</td><td>Squared</td><td>Cube</td></tr>');
+                for (var i = lowerRange; i <= higherRange; i++) {
+                    html += `<tr><td>${i}</td><td>${i*i}</td><td>${i * i * i}</td></tr>`;
+                }
+                html += '</table>';
+                document.getElementById('result').innerHTML = html; 
+            }
+        </script>
+    </body>
+</html>
