@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Program 4</title>
+    </head>
+    <body>
+        <input type="text" id="user-input" onkeyup="userHandler();">
+        <p id="demo"></p>
+        <script type="text/javascript">
+            function userHandler() {
+                var input = document.getElementById('user-input').value;
+                if (input.length == 0) {
+                    document.getElementById('demo').innerHTML = '';
+                    return;
+                }
+                if (isNaN(input)) {
+                    stringHandler(input);
+                } else {
+                    numberHandler(input);
+                }
+            }
+
+            function stringHandler(input) {
+                var index = input.search(/[aeiou]/i);
+                if (index == -1) {
+                    index = 'No vowel found';
+                } else {
+                    index = `First vowel found at index: ${index}`
+                }
+                document.getElementById('demo').innerHTML = index;
+            }
+
+            function numberHandler(input) {
+                var number = parseInt(input);
+                var reverse = 0;
+                while (number != 0) {
+                    remainder = number % 10;
+                    number = parseInt(number / 10);
+                    reverse = remainder + (10*reverse)
+                }
+                document.getElementById('demo').innerHTML = reverse;
+            }
+        </script>
+    </body>
+</html>
